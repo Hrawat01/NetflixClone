@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import SignIn from './SignIn'
+import Header from '../component/header/Header'
 
 const LoginMain = () => {
   return (
@@ -8,19 +9,8 @@ const LoginMain = () => {
        <div className="text-white font-extrabold text-[12px]">
     <div className="bg-[url('imgi_45_IN-en-20250929-TRIFECTA-perspective_4cf0c8a1-bd35-4d72-a49f-165021531dde_small.jpg')] bg-cover h-[100vh]">
     <div className="h-[100vh] w-[100%] bg-[rgba(0,0,0,0.7)]">
-   <nav className="h-[75px] w-[100%]  flex  flex-wrap justify-between items-center ">
-    <img className="h-[65px] w-[155px] ml-[100px]" src="imgi_2_Netflix_Logo_PMS.png" alt="" />
-    <div className="mr-[100px] bg-inherit flex-wrap">
-        <select className="bg-inherit rounded-[5px] border border-gray-500 h-[5vh] w-[18vh] text-center bg-black" name="" id="">
-            
-            <option  value="">  English</option>
-            <option value="">Hindi</option>
-        </select>
-        <Link className="rounded-[5px] border border-gray-500 h-[25vh] w-[13vw] ml-[5px] bg-red-600 text-[13px] p-2" to={'/signin'} element={<SignIn /> }>Sign In</Link>
-    </div>
-   </nav>
 
-
+<Header />
    
 <section className=" h-[60%] w-[40%] relative left-[30%] top-[25%] flex flex-col  items-center text-center">
     <div className="text-6xl mb-[15px] flex-wrap">Unlimited movies, shows and more</div>

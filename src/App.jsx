@@ -2,6 +2,7 @@ import React,{ Suspense }  from 'react'
 import {Link, Route, Routes } from 'react-router-dom'
 import LoginMain from './pages/LoginMain'
 import SignIn from './pages/SignIn'
+import MainLook from './pages/MainLook'
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
     <Routes>
      <Route path='/' element={<LoginMain />} />
      <Route path='/signin' element={<SignIn />} />
+     <Route path='/mainlook' element={<MainLook />} />
     </Routes>
       </Suspense>
    </div>
