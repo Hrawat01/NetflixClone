@@ -16,7 +16,7 @@ const MainLook = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  },[]);
 
   return (
     <div className="bg-black text-white h-[100%] w-[99vw] flex flex-col overflow-hidden">

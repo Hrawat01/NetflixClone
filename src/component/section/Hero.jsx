@@ -1,10 +1,13 @@
 import React from 'react'
+import { useState } from 'react';
 
 const Hero = (props) => {
     const data = props.data ;
-
     const randomNumber = Math.floor(Math.random() * 240);
     console.log(randomNumber);
+
+
+    const [showOverlay, setShowOverlay] = useState(false);
 
     return (
         <div className="flex flex-col items-end mb-5 flex-wrap">
@@ -45,7 +48,8 @@ className="text-[15px] flex-wrap flex h-[20%] w-[40%] -tracking-tighter [word-sp
   {/* inner action button */}
   <div className="flex mt-4">
   <button className="border text-[15px] bg-white text-black p-2 rounded h-[5vh] w-[5vw] justify-center items-center font-bold mr-3">Play</button>
-  <button className="border-gray-100 text-[15px] bg-[#2D2D2F] text-white p-2 rounded h-[5vh] w-[7vw] justify-center items-center font-bold">More Info</button>
+  <button className="border-gray-100 text-[15px] bg-[#2D2D2F] text-white p-2 rounded h-[5vh] w-[7vw] justify-center items-center font-bold"
+   onClick={() => setShowOverlay(true)}>More Info</button>
  </div> 
 
 
@@ -65,6 +69,31 @@ className="text-[15px] flex-wrap flex h-[20%] w-[40%] -tracking-tighter [word-sp
  </div>
   </div>
 )}
+
+
+
+
+{/* Overlay Page */}
+
+   {showOverlay && (
+        <div className="fixed z-10 h-[100%] w-[100%] bg-black bg-opacity-50 flex items-center justify-center text-black">
+          <div className="bg-white  rounded shadow-lg w-[60%] h-[70%]">
+
+
+            <img
+        src={data[randomNumber].image.original}
+        alt={data[randomNumber].name}
+          className=" relative z-9 h-[100%] w-[100%] object-cover"
+        />
+            <button
+              onClick={() => setShowOverlay(false)}
+              className=" relative mt-4 px-4 py-2 bg-red-500 text-white rounded-3xl text-xl bottom-20 left-8" >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
 
 
 </div>
