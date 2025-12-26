@@ -35,7 +35,7 @@ const Hero = (props) => {
 <h2 
 className="text-[15px] flex-wrap flex h-[20%] w-[40%] -tracking-tighter [word-spacing:0.1rem] gap-y-2 gap-x-2 "
     dangerouslySetInnerHTML={{ __html: data[randomNumber].summary
-    //    .replace(/<[^>]+>/g, "") //for remove the tags to protect from html injection
+       .replace(/<[^>]+>/g, "") //for remove the tags to protect from html injection
         .split(" ") // split into words
         .slice(0,35)  // take first 40 words
         .join(" ")+"..."  // join back and add ellipsis
