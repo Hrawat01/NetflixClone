@@ -51,10 +51,14 @@ const MainLook = () => {
                   alt={show.name}
                   className="h-[260px] w-[170px] object-fill hover:object-none rounded-xl"
                 />
+                <div className="text-sm font-bold ">{show.name}</div>
+                <div className="text-[12px] font-thin "> ⭐{show.rating.average}</div>
               </li>
             ))}
           </ul>
         </div>
+
+
       </div>
     </div>
   );
