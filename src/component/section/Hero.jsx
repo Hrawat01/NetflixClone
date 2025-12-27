@@ -3,7 +3,9 @@ import { useState } from 'react';
 
 const Hero = (props) => {
     const data = props.data ;
-    const randomNumber = Math.floor(Math.random() * 240);
+    // const randomNumber = Math.floor(Math.random() * 240); it causes the re-render
+    // const randomNumber = React.useMemo(() => Math.floor(Math.random() * 240), []); use any usestate or useMemo
+    const [randomNumber] = useState(() => Math.floor(Math.random() * 240));
     console.log(randomNumber);
 
 
