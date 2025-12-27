@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Hero from "../component/section/Hero";
+import Rows from "../component/section/Rows";
 
 const MainLook = () => {
   //   api
@@ -38,28 +39,17 @@ const MainLook = () => {
 
 
       {/* rows */}
-      <div className="flex flex-col items-center relative">
-      <h2 className="text-xl font-bold">Trending Now </h2>
-          {/* <p className="text-xl">{data[0].name}</p> */}
-
-        <div className="overflow-x-auto w-[73%] ">
-          <ul className="flex flex-row ">
-            {data.map((show) => (
-              <li key={show.id} className="flex-shrink-0 p-2 ">
-                <img
-                  src={show.image.medium}
-                  alt={show.name}
-                  className="h-[260px] w-[170px] object-fill hover:object-none rounded-xl"
-                />
-                <div className="text-sm font-bold ">{show.name}</div>
-                <div className="text-[12px] font-thin "> ⭐{show.rating.average}</div>
-              </li>
-            ))}
-          </ul>
-        </div>
+     <Rows data={data} title={"All Shows"} />
+     <Rows data={data} title={"Top Rated"} />
+     <Rows data={data} title={"Action"} />
+     <Rows data={data} title={"Drama"} />
+     <Rows data={data} title={"Comedy"} />
+     <Rows data={data} title={"Science-Friction"} />
+     <Rows data={data} title={"Thriller"} />
 
 
-      </div>
+
+      
     </div>
   );
 };
