@@ -16,9 +16,8 @@ const App = () => {
    <div className='text-6xl '>
  
       {/* <Suspense  fallback={<div className='h-[100vh] w-[100vw] bg-black text-6xl p-[10vw] relative font-bold text-emerald-100 ' >Loading...</div>}> */}
-      <Suspense  fallback={<div className="bg-black p-4 space-y-4">
-  <div className="animate-pulse bg-gray-700 h-6 w-3/4 rounded"></div>
-  <div className="animate-pulse bg-gray-700 h-6 w-1/2 rounded"></div>
+      <Suspense  fallback={<div className="bg-black h-[100vh] w-[100vw] p-4 space-y-4 flex flex-col justify-evenly items-center ">
+  <div className="animate-pulse bg-gray-700 h-11 w-3/4 rounded-2xl"></div>
   <div className="animate-pulse bg-gray-700 h-40 w-full rounded"></div>
   <div className="animate-pulse bg-gray-700 h-40 w-full rounded"></div>
   <div className="animate-pulse bg-gray-700 h-40 w-full rounded"></div>
