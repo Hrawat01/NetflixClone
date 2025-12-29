@@ -20,11 +20,10 @@ const SignIn = () => {
 
 
       <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col px-4">
-          <div className="text-2xl font-extrabold tracking-wide text-rose-500"><Header /></div>
-           
-       
 
-        
+
+        <div className='absolute  -left-40'> <Header /></div>
+      
         <main className="flex flex-1 items-center justify-center pb-12">
           <div className="w-full max-w-md rounded-2xl border border-white/10 bg-zinc-950/60 p-6 backdrop-blur sm:p-8">
             <div className="text-2xl font-bold">Sign In</div>
