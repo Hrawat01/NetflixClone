@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
    
-       <nav className="fixed h-[75px] w-full  flex  flex-wrap justify-between items-center z-50 ">
+       <nav className="fixed h-[75px] w-full  flex  flex-wrap justify-between items-center z-20 ">
     <img className="h-[65px] w-[155px] ml-[100px]" src="imgi_2_Netflix_Logo_PMS.png" alt="" />
                     {location.pathname == '/mainlook' && (  <form action="">
 <input className='bg-transparent border border-gray-200  rounded-2xl text-2xl text-white p-2 h-[5vh] w-[27vw] mr-5 ' type="text" placeholder='Search ' />
