@@ -7,11 +7,15 @@ import Header from "../component/header/Header";
 const MainLook = () => {
   //   api
   const [data, setData] = useState([]);
+   
+
+
+
+  
   const API_BASE = "https://api.tvmaze.com";
 
   const getData = async () => {
-    const response = await axios.get(`${API_BASE}/shows?page=0`);
-    // setData(response.data.splice(0,10));   
+    const response = await axios.get(`${API_BASE}/shows?page=0`); 
     console.log(response.data);
     setData(response.data);
   };
@@ -25,14 +29,6 @@ const MainLook = () => {
 
  <Header />
 <Hero data = {data} />
-
-
-
-
-
-
-
-
 
 
       {/* rows */}
