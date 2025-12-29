@@ -1,11 +1,15 @@
-import React,{ Suspense }  from 'react'
+import React,{ Suspense,lazy }  from 'react'
 import {Link, Route, Routes } from 'react-router-dom'
-import LoginMain from './pages/LoginMain'
-import SignIn from './pages/SignIn'
-import MainLook from './pages/MainLook'
+// import LoginMain from './pages/LoginMain'
+// import SignIn from './pages/SignIn'
+// import MainLook from './pages/MainLook'
+const LoginMain = lazy(() => import('./pages/LoginMain'));
+const SignIn = lazy(() => import('./pages/SignIn'));
+const MainLook = lazy(() => import('./pages/MainLook'));
 
 
 const App = () => {
+
   return (
 
 
@@ -13,16 +17,11 @@ const App = () => {
     
     {/* header */}
 
-   {/* <div className='absolute z-1 flex top-6 right-6'>
-       <Link className='text-green-700 mr-5 text-[22px]' to={'/'}>Home</Link>
-     <Link className='text-green-700 mr-5 text-[22px]' to={'/agent'}>Agents</Link>
-     <Link className='text-green-700 mr-5 text-[22px]' to={'/project'}>Projects</Link>
-   </div> */}
 
 
 
 
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense  fallback={<div className='h-[100vh] w-[100vw] bg-black text-6xl p-[10vw] relative font-bold text-emerald-100 ' >Loading...</div>}>
     <Routes>
      <Route path='/' element={<LoginMain />} />
      <Route path='/signin' element={<SignIn />} />
