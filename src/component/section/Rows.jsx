@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import OverLay from '../header/OverLay'
 
-const Rows = ({data,title,all}) => {
+const Rows = ({data,title}) => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [overlay, setOverlay] = useState(null)
 
@@ -12,13 +12,14 @@ const Rows = ({data,title,all}) => {
        
           {/* <p className="text-xl">{data[0].name}</p> */}
 
+           
         <div className="overflow-x-auto w-[73%] scrollbar-hide ">
           <ul className="flex flex-row ">
-            {data.map((show) => (
+            {data.map((show,idx) => (
               <li key={show.id} className="flex-shrink-0 p-2 " onClick={()=>{
                 console.log(show.id);
-              setShowOverlay(true);
-              setOverlay(show.id);
+                setShowOverlay(true);
+                setOverlay(idx);
             }}>
               
                 <img
@@ -36,7 +37,7 @@ const Rows = ({data,title,all}) => {
 
 
   
-      {showOverlay &&  overlay !== null && <OverLay data={all} id={overlay} showOverlay={showOverlay} setShowOverlay={setShowOverlay} setOverlay={setOverlay}/>}
+            {showOverlay &&  overlay !== null && <OverLay data={data} id={overlay} showOverlay={showOverlay} setShowOverlay={setShowOverlay} setOverlay={setOverlay}/>}
    </>
   )
 }

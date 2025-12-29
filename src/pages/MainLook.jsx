@@ -32,13 +32,13 @@ const MainLook = () => {
 
 
       {/* rows */}
-    <Rows data={data} title={"All Shows"} all={data}/>
-     <Rows data={data.filter(show => show.rating?.average >= 8.0)} title={"Top Rated"} all={data}/>
-      <Rows data={data.filter(show => show.genres.includes("Action"))} title={"Action"} all={data}/>
-      <Rows data={data.filter(show => show.genres.includes("Drama"))} title={"Drama"} all={data}/>
-      <Rows data={data.filter(show => show.genres.includes("Comedy"))} title={"Comedy"} all={data}/>
-      <Rows data={data.filter(show => show.genres.includes("Science-Fiction"))} title={"Science-Fiction"} all={data}/>
-      <Rows data={data.filter(show => show.genres.includes("Thriller"))} title={"Thriller"} all={data}/>
+    <Rows data={data} title={"All Shows"} />
+     <Rows data={data.filter(show => show.rating?.average >= 8.0)} title={"Top Rated"} />
+      <Rows data={data.filter(show => show.genres.includes("Action"))} title={"Action"} />
+      <Rows data={data.filter(show => show.genres.includes("Drama"))} title={"Drama"} />
+      <Rows data={data.filter(show => show.genres.includes("Comedy"))} title={"Comedy"} />
+      <Rows data={data.filter(show => show.genres.includes("Science-Fiction"))} title={"Science-Fiction"} />
+      <Rows data={data.filter(show => show.genres.includes("Thriller"))} title={"Thriller"} />
 
 
 

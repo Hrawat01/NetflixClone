@@ -1,6 +1,6 @@
 import React from 'react'
 
-const OverLay = ({data,id,showOverlay, setShowOverlay }) => {
+const OverLay = ({data,id,showOverlay, setShowOverlay,setOverlay }) => {
   return (
    <>
       {showOverlay && (
@@ -72,7 +72,9 @@ const OverLay = ({data,id,showOverlay, setShowOverlay }) => {
 
 {/* cross btn */}
             <button
-              onClick={() => setShowOverlay(false)}
+              onClick={() => {setShowOverlay(false);
+                setOverlay(null);
+              }}
               className=" absolute mt-4 p-2 bg-gray-600 rounded-3xl text-xl top-0 right-5" >
               <svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
             </button>
