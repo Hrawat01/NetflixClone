@@ -4,10 +4,12 @@ import Header from "../component/header/Header";
 import { Link } from "react-router-dom";
 
 const MainLook = ({data}) => {
- 
+ let token = localStorage.getItem("token");
+
 
   return (
-    <div className="bg-black text-white h-[100%] w-[99vw] flex flex-col overflow-hidden">
+    // checking the token
+    (token=="abc@123") ? <div className="bg-black text-white h-[100%] w-[99vw] flex flex-col overflow-hidden">  
       <Header data={data} />
       <Hero data={data} />
 
@@ -45,7 +47,7 @@ const MainLook = ({data}) => {
       />
 
 
-    </div>
+    </div> : <div>Firstly Login your account</div>
   );
 };
 

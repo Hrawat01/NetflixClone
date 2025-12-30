@@ -54,6 +54,7 @@ const Header = ({ data }) => {
         {location.pathname == "/search" ? (
           <button
             onClick={() => {
+              localStorage.removeItem("token"); //remove the tokens in localStorage
               navigate("/mainlook");
             }}
             className="text-xl ml-8"

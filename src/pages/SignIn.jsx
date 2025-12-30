@@ -1,17 +1,21 @@
 import React, { useState } from "react";
 import Header from "../component/header/Header";
-import MainLook from "./MainLook";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  // localStorage.clear();
+// Save object as JSON string
+localStorage.setItem("token", "abc@123"); //set localStorage
+
+
   const location = useLocation();
   const params = new URLSearchParams(location.search);
+  const navigate = useNavigate();
   const emails = params.get("email");
-
+  
   const [email, setEmail] = useState("" || emails);
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const navigate = useNavigate();
   const [errors, setErrors] = useState({ email: "", password: "" });
 
   const handleSubmit = (e) => {
