@@ -18,9 +18,9 @@ const Rows = ({data,title}) => {
           <ul className="flex flex-row ">
             {data.map((show,idx) => (
               <li key={idx} className="flex-shrink-0 p-2 " onClick={()=>{
-                console.log(show.id);
                 setShowOverlay(true);
                 setSelectedIndex(idx);
+                console.log(idx);
             }}>
               
                 <img

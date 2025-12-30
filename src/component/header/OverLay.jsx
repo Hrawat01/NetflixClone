@@ -40,13 +40,13 @@ const OverLay = ({data,id,showOverlay, setShowOverlay }) => {
     <div className='flex justify-between '>
       <div>
         <div className='text-gray-400'>Network:</div>
-        <div>{data[id].name}</div>
+        <div>{data[id]?.name}</div>
         </div>
 
 
       <div>
         <div className='text-gray-400'>Status:</div>
-        <div>{data[id].status}</div>
+        <div>{data[id]?.status}</div>
         </div>
 
 
@@ -55,7 +55,7 @@ const OverLay = ({data,id,showOverlay, setShowOverlay }) => {
     <div className='flex justify-between' >
       <div>
         <div className='text-gray-400'>Runtime:</div>
-        <div>{data[id].runtime} min</div>
+        <div>{data[id]?.runtime} min</div>
         </div>
 
 
