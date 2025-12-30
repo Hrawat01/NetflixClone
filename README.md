@@ -1,5 +1,3 @@
-# React + Vite
-
 # React + Vite Project 🚀
 
 This is a React project bootstrapped with [Vite](https://vitejs.dev/).  
