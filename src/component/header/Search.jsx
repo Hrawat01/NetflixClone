@@ -18,6 +18,7 @@ const Search = ({ data }) => {
 );
 
 
+
  
   return (
     <>
@@ -34,7 +35,7 @@ const Search = ({ data }) => {
           <div className="flex flex-wrap gap-4">
             {filteredData.length > 0 ? (
               filteredData.map((list, idx) => (
-                <div key={idx} className="bg-white text-black p-2 rounded text-lg cursor-pointer hover:bg-gray-200"
+                <div key={idx} className="bg-gray-500 text-black p-2 rounded text-lg cursor-pointer hover:bg-gray-200"
                   onClick={()=>{ 
                       setShowOverlay(true);
                       setSelectedIndex(idx);
@@ -49,9 +50,9 @@ const Search = ({ data }) => {
             )}
           </div>
         </div>
+       {showOverlay &&  selectedIndex !== null && <OverLay data={filteredData} id={selectedIndex} showOverlay={showOverlay} setShowOverlay={setShowOverlay} />}
       </div>
 
-       {showOverlay &&  selectedIndex !== null && <OverLay data={filteredData} id={selectedIndex} showOverlay={showOverlay} setShowOverlay={setShowOverlay} />}
     </>
   );
 };
