@@ -10,7 +10,7 @@ It uses **Axios** for API requests and supports fast development with HMR.
 Clone the repository:
 ```bash
 git clone https://github.com/Hrawat01/NetflixClone.git
-cd OTT_PROJECT(NETFLLIX)
+cd NetflixClone
 
 
 Install all dependencies:
