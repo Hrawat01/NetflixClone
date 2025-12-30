@@ -7,11 +7,7 @@ import Header from "../component/header/Header";
 const MainLook = () => {
   //   api
   const [data, setData] = useState([]);
-   
 
-
-
-  
   const API_BASE = "https://api.tvmaze.com";
 
   const getData = async () => {

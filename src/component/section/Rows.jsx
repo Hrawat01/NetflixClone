@@ -3,7 +3,8 @@ import OverLay from '../header/OverLay'
 
 const Rows = ({data,title}) => {
   const [showOverlay, setShowOverlay] = useState(false);
-  const [overlay, setOverlay] = useState(null)
+ const [selectedIndex, setSelectedIndex] = useState(null);
+
 
   return (
    <>
@@ -16,19 +17,19 @@ const Rows = ({data,title}) => {
         <div className="overflow-x-auto w-[73%] scrollbar-hide ">
           <ul className="flex flex-row ">
             {data.map((show,idx) => (
-              <li key={show.id} className="flex-shrink-0 p-2 " onClick={()=>{
+              <li key={idx} className="flex-shrink-0 p-2 " onClick={()=>{
                 console.log(show.id);
                 setShowOverlay(true);
-                setOverlay(idx);
+                setSelectedIndex(idx);
             }}>
               
                 <img
-                  src={show.image.medium}
+                  src={show.image?.medium}
                   alt={show.name}
                   className="h-[260px] w-[170px] object-fill hover:object-none rounded-xl"
                   />
                 <div className="text-sm font-bold ">{show.name}</div>
-                <div className="text-[12px] font-thin "> ⭐{show.rating.average}</div>
+                <div className="text-[12px] font-thin "> ⭐{show.rating?.average}</div>
               </li>
             ))}
           </ul>
@@ -37,7 +38,7 @@ const Rows = ({data,title}) => {
 
 
   
-            {showOverlay &&  overlay !== null && <OverLay data={data} id={overlay} showOverlay={showOverlay} setShowOverlay={setShowOverlay} setOverlay={setOverlay}/>}
+            {showOverlay &&  selectedIndex !== null && <OverLay data={data} id={selectedIndex} showOverlay={showOverlay} setShowOverlay={setShowOverlay} />}
    </>
   )
 }

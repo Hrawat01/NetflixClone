@@ -22,8 +22,8 @@ const Hero = (props) => {
        {/* hero-image */}
       {data.length > 0 && (
         <img
-        src={data[randomNumber].image.original}
-        alt={data[randomNumber].name}
+        src={data[randomNumber]?.image?.original}
+        alt={data[randomNumber]?.name}
           className="h-[560px] w-[100%] object-cover z-1 "
         />
       )}
@@ -37,11 +37,11 @@ const Hero = (props) => {
 
       {data.length > 0 && (
   <div className="absolute left-[14vw] top-[30vh] ">
-    <h1 className="text-5xl font-bold mb-4">{data[randomNumber].name}</h1>
+    <h1 className="text-5xl font-bold mb-4">{data[randomNumber]?.name}</h1>
 <h2 
 className="text-[15px] flex-wrap flex h-[20%] w-[40%] -tracking-tighter [word-spacing:0.1rem] gap-y-2 gap-x-2 "
-    dangerouslySetInnerHTML={{ __html: data[randomNumber].summary
-       .replace(/<[^>]+>/g, "") //for remove the tags to protect from html injection
+    dangerouslySetInnerHTML={{ __html: data[randomNumber]?.summary
+       ?.replace(/<[^>]+>/g, "") //for remove the tags to protect from html injection
         .split(" ") // split into words
         .slice(0,35)  // take first 40 words
         .join(" ")+"..."  // join back and add ellipsis
@@ -60,7 +60,7 @@ className="text-[15px] flex-wrap flex h-[20%] w-[40%] -tracking-tighter [word-sp
  <div className="text-white">
    {data.length > 0 && (
    <div>
-       {data[randomNumber].genres.map((type , idx)=>(
+       {data[randomNumber]?.genres?.map((type , idx)=>(
  <button key={idx} className="rounded-2xl h-5 border border-gray-500 text-[10px] m-1 pb-1 pt-1 px-2 text-center text-gray-400">
         {type}
  </button>
