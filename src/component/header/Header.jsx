@@ -74,7 +74,7 @@ const Header = ({ data }) => {
 
         {location.pathname == "/" && (
           <Link
-            className="rounded-[5px] border border-gray-500 h-[25vh] w-[13vw] ml-[5px] bg-red-600 text-[13px] p-2 text-white"
+            className="rounded-[5px] border border-gray-500 h-[5vh] w-[5vw] ml-[5px] bg-red-600 text-[13px] p-2 text-white"
             to={"/signin"}
           >
             Sign In
