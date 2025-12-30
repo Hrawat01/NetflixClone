@@ -1,8 +1,18 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation , useNavigate  } from "react-router-dom";
 
-const Header = () => {
+
+const Header = ({data}) => {
   const location = useLocation();
+   const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e.target.elements.q.value);
+    const query = e.target.elements.q.value;
+    navigate(`/search?q=${query}`);
+  };
+
 
   return (
     <nav className="fixed h-[75px] w-full  flex  flex-wrap justify-between items-center z-20 ">
@@ -14,12 +24,13 @@ const Header = () => {
 
 
       {/* Search */}
-      {location.pathname == "/mainlook" && (
-        <form action="">
+      {(location.pathname == "/mainlook" || location.pathname == "/search" ) && (
+        <form onSubmit={handleSubmit} >
           <input
             className="bg-transparent border border-gray-200  rounded-2xl text-2xl text-white p-2 h-[5vh] w-[27vw] mr-5 "
             type="text"
             placeholder="Search "
+            name="q"
           />
           <button className="border border-gray-500  rounded-2xl text-xl text-white px-4 py-1 bg-red-600">
             Search
