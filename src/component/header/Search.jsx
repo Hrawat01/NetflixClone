@@ -17,12 +17,12 @@ const Search = ({ data }) => {
         show.name.toLowerCase().includes(query)
 );
 
-
+const token =localStorage.getItem("token");
 
  
   return (
-    <>
-      <div className="bg-black h-[100vh] w-[100vw] text-white flex flex-col overflow-hidden">
+  
+     token ? <div className="bg-black h-[100vh] w-[100vw] text-white flex flex-col overflow-hidden">
         <Header className="w-full" />
 
         <div className="relative top-[20vh] left-[10vw] w-[83%] h-auto text-5xl  p-4">
@@ -51,9 +51,8 @@ const Search = ({ data }) => {
           </div>
         </div>
        {showOverlay &&  selectedIndex !== null && <OverLay data={filteredData} id={selectedIndex} showOverlay={showOverlay} setShowOverlay={setShowOverlay} />}
-      </div>
+      </div>: <div>Please Login First</div>
 
-    </>
   );
 };
 
