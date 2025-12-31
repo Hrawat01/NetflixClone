@@ -20,6 +20,32 @@ const Header = ({ data }) => {
         alt=""
       />
 
+         {/* only visible when we are in search page */}
+        {location.pathname == "/search" ? (
+          <>
+            {/* home icon */}
+            <button
+              onClick={() => {
+                navigate("/mainlook");
+              }}
+              className=" absolute left-6 ml-3 mt-1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="44px"
+                viewBox="0 -960 960 960"
+                width="37px"
+                fill="#D9232E"
+              >
+                <path d="M160-120v-480l320-240 320 240v480H560v-280H400v280H160Z" />
+              </svg>
+            </button>
+          </>
+        ) : null}
+
+
+
+
       {/* Search */}
       {(location.pathname == "/mainlook" || location.pathname == "/search") && (
         <form onSubmit={handleSubmit}>
@@ -34,6 +60,9 @@ const Header = ({ data }) => {
           </button>
         </form>
       )}
+
+
+    
 
       <div className="mr-[100px] bg-inherit flex-wrap flex  items-center mt-4">
         <select
@@ -50,26 +79,25 @@ const Header = ({ data }) => {
           </option>
         </select>
 
-        {/* only visible when we are in search page */}
-        {location.pathname == "/search" ? (
-          <button
-            onClick={() => {
-              localStorage.removeItem("token"); //remove the tokens in localStorage
-              navigate("/mainlook");
-            }}
-            className="text-xl ml-8"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="44px"
-              viewBox="0 -960 960 960"
-              width="35px"
-              fill="#D9232E"
+       
+       
+
+
+  {/* logout */}
+        {(location.pathname == "/mainlook" ||
+          location.pathname == "/search") && (
+          <>
+            <button
+              className="text-xl ml-4 bg-red-800 px-4 py-1 rounded-2xl"
+              onClick={() => {
+                localStorage.removeItem("token"); //remove the tokens in localStorage
+                navigate("/");
+              }}
             >
-              <path d="M160-120v-480l320-240 320 240v480H560v-280H400v280H160Z" />
-            </svg>
-          </button>
-        ) : null}
+              Logout
+            </button>
+          </>
+        )}
 
         {/* hide when we are in signIn page */}
 
