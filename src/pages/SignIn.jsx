@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 const SignIn = () => {
   // localStorage.clear();
 // Save object as JSON string
-localStorage.setItem("token", "abc@123"); //set localStorage
+
 
 
   const location = useLocation();
@@ -113,7 +113,8 @@ localStorage.setItem("token", "abc@123"); //set localStorage
               <button
                 type="submit"
                 className="w-full rounded-lg bg-rose-600 px-4 py-2.5 text-sm font-semibold text-white shadow-glow hover:bg-rose-500 disabled:cursor-not-allowed disabled:opacity-70"
-              >
+             onClick={()=>{localStorage.setItem("token", "abc@123"); }}//set localStorage
+             >
                 Sign In
               </button>
             </form>
