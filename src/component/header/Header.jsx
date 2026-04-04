@@ -13,9 +13,9 @@ const Header = ({ data }) => {
   };
 
   return (
-    <nav className="fixed h-[75px] w-full  flex  flex-wrap justify-between items-center z-20 ">
+    <nav className="fixed h-auto md:h-[75px] py-4 md:py-0 w-full flex flex-wrap justify-between items-center z-20 bg-gradient-to-b from-black/80 to-transparent">
       <img
-        className="h-[65px] w-[155px] ml-[100px]"
+        className="h-[40px] md:h-[65px] w-auto ml-4 md:ml-[100px]"
         src="imgi_2_Netflix_Logo_PMS.png"
         alt=""
       />
@@ -28,14 +28,15 @@ const Header = ({ data }) => {
               onClick={() => {
                 navigate("/mainlook");
               }}
-              className=" absolute left-6 ml-3 mt-1"
+              className="absolute left-6 ml-3 mt-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                height="44px"
+                height="32px"
                 viewBox="0 -960 960 960"
-                width="37px"
+                width="32px"
                 fill="#D9232E"
+                className="md:h-[44px] md:w-[37px]"
               >
                 <path d="M160-120v-480l320-240 320 240v480H560v-280H400v280H160Z" />
               </svg>
@@ -48,14 +49,14 @@ const Header = ({ data }) => {
 
       {/* Search */}
       {(location.pathname == "/mainlook" || location.pathname == "/search") && (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="flex items-center mt-2 md:mt-0 px-4 md:px-0 order-3 md:order-2 w-full md:w-auto">
           <input
-            className="bg-transparent border border-gray-200  rounded-2xl text-2xl text-white p-2 h-[5vh] w-[27vw] mr-5 "
+            className="bg-black/50 border border-gray-200 rounded-2xl text-lg md:text-2xl text-white p-2 h-[40px] md:h-[5vh] flex-grow md:w-[27vw] mr-2 md:mr-5"
             type="text"
             placeholder="Search "
             name="q"
           />
-          <button className="border border-gray-500  rounded-2xl text-xl text-white px-4 py-1 bg-red-600">
+          <button className="border border-gray-500 rounded-2xl text-sm md:text-xl text-white px-3 md:px-4 py-1 bg-red-600 whitespace-nowrap">
             Search
           </button>
         </form>
@@ -64,17 +65,16 @@ const Header = ({ data }) => {
 
     
 
-      <div className="mr-[100px] bg-inherit flex-wrap flex  items-center mt-4">
+      <div className="mr-4 md:mr-[100px] bg-inherit flex items-center mt-0 md:mt-4 order-2 md:order-3">
         <select
-          className="bg-inherit rounded-[5px] border border-gray-500 h-[5vh] w-[18vh] text-center bg-black text-[15px] text-emerald-50 "
+          className="bg-black rounded-[5px] border border-gray-500 h-[35px] md:h-[5vh] w-[100px] md:w-[18vh] text-center text-[12px] md:text-[15px] text-emerald-50"
           name=""
           id=""
         >
-          <option className=" bg-black" value="">
-            {" "}
+          <option value="">
             English
           </option>
-          <option className=" bg-black" value="">
+          <option value="">
             Hindi
           </option>
         </select>
@@ -88,7 +88,7 @@ const Header = ({ data }) => {
           location.pathname == "/search") && (
           <>
             <button
-              className="text-xl ml-4 bg-red-800 px-4 py-1 rounded-2xl"
+              className="text-sm md:text-xl ml-2 md:ml-4 bg-red-800 px-3 md:px-4 h-[35px] md:h-[5vh] rounded-2xl flex items-center justify-center whitespace-nowrap"
               onClick={() => {
                 localStorage.removeItem("token"); //remove the tokens in localStorage
                 navigate("/");
@@ -103,7 +103,7 @@ const Header = ({ data }) => {
 
         {location.pathname == "/" && (
           <Link
-            className="rounded-[5px] border border-gray-500 h-[5vh] w-[5vw] ml-[5px] bg-red-600 text-[13px] p-2 text-white"
+            className="rounded-[5px] border border-gray-500 h-[35px] md:h-[5vh] w-auto px-4 ml-2 md:ml-[5px] bg-red-600 text-[12px] md:text-[13px] flex items-center justify-center text-white"
             to={"/signin"}
           >
             Sign In

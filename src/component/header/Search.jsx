@@ -19,22 +19,22 @@ const Search = ({ data }) => {
   const token = localStorage.getItem("token");
 
   return token ? (
-    <div className="bg-black h-[100vh] w-[100vw] text-white flex flex-col overflow-hidden">
+    <div className="bg-black min-h-screen w-full text-white flex flex-col overflow-x-hidden">
       <Header className="w-full" />
 
-      <div className="relative top-[20vh] left-[10vw] w-[83%] h-auto text-5xl  p-4">
+      <div className="relative top-[120px] md:top-[20vh] left-4 md:left-[10vw] w-[90%] md:w-[83%] h-auto text-3xl md:text-5xl p-4">
         {/* Print the query */}
-        <div className="mb-4 text-2xl">
+        <div className="mb-4 text-xl md:text-2xl">
           Search query: <span className="font-bold">{query}</span>
         </div>
 
         {/* Render filtered results */}
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-2 md:gap-4">
           {filteredData.length > 0 ? (
             filteredData.map((list, idx) => (
               <div
                 key={idx}
-                className="bg-gray-500 text-black p-2 rounded text-lg cursor-pointer hover:bg-gray-200"
+                className="bg-gray-500 text-black px-3 py-1 md:p-2 rounded text-sm md:text-lg cursor-pointer hover:bg-gray-200"
                 onClick={() => {
                   setShowOverlay(true);
                   setSelectedIndex(idx);
@@ -45,7 +45,7 @@ const Search = ({ data }) => {
               </div>
             ))
           ) : (
-            <div className="text-red-600 text-xl">No results found</div>
+            <div className="text-red-600 text-lg md:text-xl">No results found</div>
           )}
         </div>
       </div>

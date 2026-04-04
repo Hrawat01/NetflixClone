@@ -11,7 +11,7 @@ const navigate =  useNavigate();
 
   return (
     // checking the token
-    (token=="abc@123") ? <div className="bg-black text-white h-[100%] w-[99vw] flex flex-col overflow-hidden">  
+    (token=="abc@123") ? <div className="bg-black text-white min-h-screen w-full flex flex-col overflow-x-hidden">  
       <Header data={data} />
       <Hero data={data} />
 
