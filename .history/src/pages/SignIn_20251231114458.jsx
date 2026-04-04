@@ -43,7 +43,7 @@ const SignIn = () => {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-50">
       <div className="pointer-events-none fixed inset-0">
-        <div className="bg-[url('/netflix_bg.jpeg')] bg-cover h-[100vh]" />{" "}
+        <div className="bg-[url('imgi_45_IN-en-20250929-TRIFECTA-perspective_4cf0c8a1-bd35-4d72-a49f-165021531dde_small.jpg')] bg-cover h-[100vh]" />{" "}
         {/* bg image  */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black" />{" "}
         {/* black filter */}
