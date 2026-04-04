@@ -15,7 +15,7 @@ const Search = ({ data }) => {
     
     
     const filteredData = data.filter((show) =>
-        show.name.toLowerCase().includes(query) 
+        show.name.toLowerCase().includes(query)
 );
 
 const token =localStorage.getItem("token");
