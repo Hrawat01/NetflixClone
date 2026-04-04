@@ -22,19 +22,19 @@ const Hero = (props) => {
         <img
           src={data[randomNumber]?.image?.original}
           alt={data[randomNumber]?.name}
-          className="h-[560px] w-[100%] object-cover z-1 "
+          className="h-[400px] md:h-[560px] w-full object-cover z-1"
         />
       )}
 
       {/* hero-inner summary */}
 
       {data.length > 0 && (
-        <div className="absolute left-[14vw] top-[30vh] ">
-          <h1 className="text-5xl font-bold mb-4">
+        <div className="absolute left-4 md:left-[14vw] top-[15vh] md:top-[30vh] w-[90%] md:w-auto">
+          <h1 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4">
             {data[randomNumber]?.name}
           </h1>
           <h2
-            className="text-[15px] flex-wrap flex h-[20%] w-[40%] -tracking-tighter [word-spacing:0.1rem] gap-y-2 gap-x-2 "
+            className="text-xs md:text-[15px] flex-wrap flex h-auto md:h-[20%] w-full md:w-[40%] -tracking-tighter [word-spacing:0.1rem] gap-y-2 gap-x-2 line-clamp-3 md:line-clamp-none"
             dangerouslySetInnerHTML={{
               __html:
                 data[randomNumber]?.summary
@@ -47,11 +47,11 @@ const Hero = (props) => {
 
           {/* inner action button */}
           <div className="flex mt-4">
-            <button className="border text-[15px] bg-white text-black p-2 rounded h-[5vh] w-[5vw] justify-center items-center font-bold mr-3">
+            <button className="border text-sm md:text-[15px] bg-white text-black p-2 rounded h-[40px] md:h-[5vh] w-auto px-6 md:px-8 flex justify-center items-center font-bold mr-3">
               Play
             </button>
             <button
-              className="border-gray-100 text-[15px] bg-[#2D2D2F] text-white p-2 rounded h-[5vh] w-[7vw] justify-center items-center font-bold"
+              className="border-gray-100 text-sm md:text-[15px] bg-[#2D2D2F] text-white p-2 rounded h-[40px] md:h-[5vh] w-auto px-6 md:px-8 flex justify-center items-center font-bold"
               onClick={() => setShowOverlay(true)}
             >
               More Info

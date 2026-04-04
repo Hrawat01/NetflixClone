@@ -30,7 +30,7 @@ const App = () => {
   return (
 
 
-   <div className='text-6xl '>
+   <div className='text-base md:text-6xl'>
  
       {/* <Suspense  fallback={<div className='h-[100vh] w-[100vw] bg-black text-6xl p-[10vw] relative font-bold text-emerald-100 ' >Loading...</div>}> */}
       <Suspense  fallback={<div className="bg-black h-[100vh] w-[100vw] p-4 space-y-4 flex flex-col justify-evenly items-center ">
