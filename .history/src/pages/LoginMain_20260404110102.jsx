@@ -9,7 +9,7 @@ const LoginMain = () => {
   return (
     <div>
       <div className="text-white font-extrabold text-[12px]">
-        <div className="bg-[url('netflix_bg.jpeg')] bg-cover h-[100vh]">
+        <div className="bg-[url('public\imgi_45_IN-en-20250929-TRIFECTA-perspective_4cf0c8a1-bd35-4d72-a49f-165021531dde_small.jpeg.jpg')] bg-cover h-[100vh]">
           <div className="h-[100vh] w-[100%] bg-[rgba(0,0,0,0.7)]">
             <Header />
 
